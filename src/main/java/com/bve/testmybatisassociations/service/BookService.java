@@ -19,7 +19,6 @@ public class BookService {
     @JsonSerialize
     public BookDTO getBookById(int id){
         Book book = sqlSession.selectOne("getBookById",id);
-//        BookDTO bookDTO = new BookDTO(book.getId(),book.getName(),book.getAuthor().getId(),book.getAuthor().getName(),book.getAuthor().getAge());
         BookDTO bookDTO = new BookDTO(book);
         return bookDTO;
     }

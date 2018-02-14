@@ -18,6 +18,7 @@ public class Book extends AbstractEntity {
     }
 
     public void setAuthor(Author author) {
+
         this.author = author;
     }
 

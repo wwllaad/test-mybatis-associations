@@ -2,6 +2,7 @@ package com.bve.testmybatisassociations.serialize;
 
 import com.bve.testmybatisassociations.model.AbstractEntity;
 import com.bve.testmybatisassociations.model.Author;
+import com.bve.testmybatisassociations.model.Book;
 
 public class BookDTO extends AbstractEntity {
 
@@ -12,6 +13,18 @@ public class BookDTO extends AbstractEntity {
         this.id = id;
         this.name = name;
         this.author = new Author(author_id, author_name, author_age);
+    }
+
+    public BookDTO(int id, String name, Author author){
+        this.id = id;
+        this.name = name;
+        this.author = author;
+    }
+
+    public BookDTO(Book book){
+        this.id = book.getId();
+        this.name = book.getName();
+        this.author = book.getAuthor();
     }
 
     public BookDTO(int id) {

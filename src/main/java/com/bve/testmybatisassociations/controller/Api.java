@@ -2,6 +2,7 @@ package com.bve.testmybatisassociations.controller;
 
 
 import com.bve.testmybatisassociations.model.Book;
+import com.bve.testmybatisassociations.serialize.BookDTO;
 import com.bve.testmybatisassociations.service.BookService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -17,7 +18,7 @@ public class Api {
     BookService bookService;
 
     @GetMapping("/book")
-    public Book getBookById(@RequestParam int id){
+    public BookDTO getBookById(@RequestParam int id){
         return bookService.getBookById(id);
     }
 }

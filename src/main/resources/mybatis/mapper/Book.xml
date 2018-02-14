@@ -7,7 +7,7 @@
     <resultMap id="books" type="com.bve.testmybatisassociations.model.Book">
         <id property="id" column="book_id"/>
         <result property="name" column="book_name"/>
-        <association property="author" column="author_id" javaType="com.bve.testmybatisassociations.model.Author" select="getAuthorById">
+        <association property="author" column="author_id" javaType="com.bve.testmybatisassociations.model.Author" select="mybatis.mapper.Author.getAuthorById">
         </association>
     </resultMap>
 

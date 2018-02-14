@@ -21,6 +21,13 @@ public class Book extends AbstractEntity {
         this.author = author;
     }
 
+    public Book(int id) {
+        super(id);
+    }
+
+    public Book() {
+    }
+
     public Book(int id, String name, Author author) {
         super(id);
         this.name = name;

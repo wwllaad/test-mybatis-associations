@@ -2,6 +2,7 @@ package com.bve.testmybatisassociations.service;
 
 import com.bve.testmybatisassociations.model.Author;
 import com.bve.testmybatisassociations.model.Book;
+import com.bve.testmybatisassociations.serialize.BookDTO;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import org.apache.ibatis.session.SqlSession;
 import org.springframework.stereotype.Service;
@@ -16,9 +17,10 @@ public class BookService {
     }
 
     @JsonSerialize
-    public Book getBookById(int id){
+    public BookDTO getBookById(int id){
         Book book = sqlSession.selectOne("getBookById",id);
-        return book;
+        BookDTO bookDTO = new BookDTO(book.getId(),book.getName(),book.getAuthor().getId(),book.getAuthor().getName(),book.getAuthor().getAge());
+        return bookDTO;
     }
 
 

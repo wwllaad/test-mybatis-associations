@@ -9,7 +9,7 @@
         <result property="name" column="author_name"/>
         <result property="age" column="author_age"/>
     </resultMap>
-    <select id="getAuthorById" resultMap="authors">
+    <select id="getAuthorById" resultMap="authors" parameterType="java.lang.Integer">
         SELECT * FROM authors WHERE author_id=#{id}
     </select>
 </mapper>
